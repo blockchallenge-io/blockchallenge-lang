@@ -5,13 +5,19 @@ plugins {
 }
 
 group = "io.blockchallenge"
-version = "1.0"
+version = rootProject.version
+java.targetCompatibility = JavaVersion.VERSION_16
+java.sourceCompatibility = JavaVersion.VERSION_16
 
 repositories {
     mavenCentral()
     maven {
         name = "spigot-repo"
         setUrl("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+    }
+    maven {
+        name = "github"
+        setUrl("https://maven.pkg.github.com/blockchallenge-io")
     }
 }
 
@@ -32,7 +38,7 @@ publishing {
     }
 
     publications {
-        create<MavenPublication>("maven") {
+        create<MavenPublication>("gpr") {
             groupId = group.toString()
             artifactId = project.name
             version = project.version.toString()
