@@ -4,8 +4,8 @@ plugins {
     id("net.linguica.maven-settings") version "0.5"
 }
 
-group = "io.blockchallenge"
-version = rootProject.version
+group = "io.blockchallenge.lang"
+version = "0.1"
 java.targetCompatibility = JavaVersion.VERSION_16
 java.sourceCompatibility = JavaVersion.VERSION_16
 
