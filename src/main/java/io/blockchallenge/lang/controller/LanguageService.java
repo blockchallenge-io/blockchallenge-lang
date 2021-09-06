@@ -47,6 +47,9 @@ public class LanguageService {
         try {
             JsonReader reader = new JsonReader(new FileReader(file));
             Map<String, Map<String, String>> newLang = gson.fromJson(reader, LANG_FILE_TYPE);
+            if(newLang == null) {
+                return;
+            }
             for(Map.Entry<String, Map<String, String>> entry : newLang.entrySet()) {
                 if(!languageStore.containsKey(entry.getKey())) {
                     languageStore.put(entry.getKey(), new HashMap<>());
